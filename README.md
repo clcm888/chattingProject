@@ -19,17 +19,6 @@ notice VARCHAR2(1000),
 meetingSchedule VARCHAR2(1000)
 );
 
-commit;
-
-DROP TABLE maindata;
-
-insert into maindata(notice,meetingSchedule)
-values('메인화면','규칙');
-
-
-SELECT * FROM maindata;
-
-
 CREATE TABLE memberdata
 (
     mid varchar2(20) CONSTRAINT memberdata_id_pk PRIMARY key,
@@ -41,19 +30,6 @@ CREATE TABLE memberdata
     chatlog VARCHAR2(20)
 );
 
-commit;
-
-DROP TABLE memberdata;
-
-insert into memberdata(mid,mname,pw,gender,phoneNum,madmin,chatlog)
-values('aaa','a','1234',1,'01011111111',1,'aaaaa');
-insert into memberdata(mid,mname,pw,gender,phoneNum,madmin,chatlog)
-values('bbb','b','1234',0,'01012341234',1,'bbbbb');
-
-SELECT * FROM memberdata;
-
-
-
 CREATE TABLE noticeboarddata
 (
 type number(1),
@@ -64,6 +40,20 @@ contents VARCHAR2(1000),
 reply VARCHAR2(1000)
 );
 
+insert into maindata(notice,meetingSchedule)
+values('분위기흐리기 금지!! 기분좋게 친목나눠요','2021-04-28 정모!!');
+
+insert into memberdata(mid,mname,pw,gender,phoneNum,madmin,chatlog)
+values('aaa','a','1234',1,'01011111111',1,'aaaaa');
+insert into memberdata(mid,mname,pw,gender,phoneNum,madmin,chatlog)
+values('bbb','b','1234',0,'01012341234',1,'bbbbb');
+
+insert into noticeboarddata(type,writer,time,title,contents,reply)
+values(1,'aaa','2020-07-01 18:18:18','4월28일 정모일정공지','참가 희망하시면 메세지 부탁드립니다.','');
+
 commit;
 ```
 <br>
+
+![캡처](https://user-images.githubusercontent.com/81599227/116409212-93888a00-a86e-11eb-9e41-16666e298d4b.PNG)
+
